@@ -11,7 +11,11 @@ local plugins = {
     cmd = "Silicon",
     config = function ()
       require("nvim-silicon").setup({
-        font = "JetBrainsMono Nerd Font=34;Noto Color Emoji=34"
+        font = "JetBrainsMono Nerd Font=34;Noto Color Emoji=34",
+        theme = "Dracula",
+        window_title = function()
+          return vim.fn.fnamemodify(vim.fn.bufname(vim.fn.bufnr()), ':~:.')
+        end,
       })
     end
 
