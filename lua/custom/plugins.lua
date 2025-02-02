@@ -105,6 +105,7 @@ local plugins = {
         "clangd",
         "clang-format",
         "codelldb",
+        "elixir-ls",
       }
     }
   }
