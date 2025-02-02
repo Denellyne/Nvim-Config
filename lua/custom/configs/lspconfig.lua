@@ -11,3 +11,15 @@ lspconfig.clangd.setup{
   end,
   capabilities = capabilities,
 }
+
+lspconfig.elixirls.setup{
+  cmd = {"elixir-ls.cmd"},
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    elixirLS = {
+      dialyzerEnabled = false,
+      fetchDeps = false
+    }
+  }
+}
