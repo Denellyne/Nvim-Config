@@ -21,3 +21,8 @@ end
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
+-- Disable arrow keys
+vim.api.nvim_set_keymap('i', '<Up>', '<Nop>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<Down>', '<Nop>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<Left>', '<Nop>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<Right>', '<Nop>', { noremap = true })

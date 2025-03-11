@@ -103,8 +103,19 @@ local plugins = {
         "clangd",
         "clang-format",
         "codelldb",
+        "pyright",
+        "haskell-language-server"
       }
     }
-  }
+  }, 
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "cpp",
+        "haskell"
+      },
+    },
+  },
 }
 return plugins
