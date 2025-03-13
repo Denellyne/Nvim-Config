@@ -1,7 +1,10 @@
 require "core"
 
 vim.o.relativenumber = true
-
+vim.opt.foldmethod = "expr"
+vim.opt.foldlevel = 20
+vim.opt.foldexpr ="nvim_treesitter#foldexpr()"
+ 
 local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
 
 if custom_init_path then
