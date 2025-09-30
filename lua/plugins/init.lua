@@ -106,7 +106,10 @@ return {
     opts = function()
       return require "configs.none-ls"
     end,
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvimtools/none-ls-extras.nvim",
+    },
   },
 
   {
