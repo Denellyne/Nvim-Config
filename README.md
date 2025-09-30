@@ -1,6 +1,7 @@
 # Nvim config
 
-### Uses NvChad as base template
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2695dfef-336c-4fcf-8563-220b566ce06f" />
+
 
 ## Install
 
