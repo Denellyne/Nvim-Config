@@ -1,5 +1,6 @@
 require "nvchad.autocmds"
 
+-- Folds
 vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
     -- check if treesitter has parser
