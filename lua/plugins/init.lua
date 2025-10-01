@@ -24,7 +24,7 @@ return {
         },
       },
       presets = {
-        bottom_search = true, -- use classic bottom cmdline for search
+        bottom_search = true,   -- use classic bottom cmdline for search
         command_palette = true, -- command line and popupmenu together
         long_message_to_split = true,
         inc_rename = false,
@@ -64,7 +64,7 @@ return {
     dependencies = "mfussenegger/nvim-dap",
     keys = {
       { "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Add breakpoint at line" } },
-      { "<leader>dr", "<cmd> DapContinue <CR>", { desc = " Start or continue debugger" } },
+      { "<leader>dr", "<cmd> DapContinue <CR>",         { desc = " Start or continue debugger" } },
     },
 
     config = function()
