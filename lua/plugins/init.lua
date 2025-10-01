@@ -121,8 +121,9 @@ return {
         "codelldb",
         "pyright",
         "pyink",
-        "haskell-language-server",
+        -- "haskell-language-server",
         "bash-language-server",
+        "lua-language-server"
       },
     },
   },
@@ -132,8 +133,9 @@ return {
       ensure_installed = {
         "cpp",
         "c",
-        "haskell",
+        -- "haskell",
         "python",
+        "lua"
       },
     },
   },
