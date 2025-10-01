@@ -5,6 +5,7 @@ local opts = {
   sources = {
     null_ls.builtins.formatting.clang_format,
     null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.pyink,
     require "none-ls.formatting.trim_whitespace",
     require "none-ls.formatting.trim_newlines",
   },

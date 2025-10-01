@@ -102,7 +102,7 @@ return {
   },
   {
     "nvimtools/none-ls.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     opts = function()
       return require "configs.none-ls"
     end,
@@ -120,6 +120,7 @@ return {
         "clang-format",
         "codelldb",
         "pyright",
+        "pyink",
         "haskell-language-server",
         "bash-language-server",
       },
@@ -130,7 +131,9 @@ return {
     opts = {
       ensure_installed = {
         "cpp",
+        "c",
         "haskell",
+        "python",
       },
     },
   },

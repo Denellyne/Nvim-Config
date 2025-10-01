@@ -1,9 +1,10 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "clangd", "lua_ls" }
+local servers = { "clangd", "pyright", "lua_ls" }
 vim.lsp.enable(servers)
 
 vim.lsp.config.clangd = {
+
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
   root_markers = {
     ".clangd",
