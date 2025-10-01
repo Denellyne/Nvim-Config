@@ -42,7 +42,7 @@ return {
   },
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -100,17 +100,17 @@ return {
       require "dap"
     end,
   },
-  {
-    "nvimtools/none-ls.nvim",
-    -- event = "VeryLazy",
-    opts = function()
-      return require "configs.none-ls"
-    end,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvimtools/none-ls-extras.nvim",
-    },
-  },
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   event = "VeryLazy",
+  --   opts = function()
+  --     return require "configs.none-ls"
+  --   end,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvimtools/none-ls-extras.nvim",
+  --   },
+  -- },
 
   {
     "williamboman/mason.nvim",
@@ -121,9 +121,10 @@ return {
         "codelldb",
         "pyright",
         "pyink",
+        "stylua",
         -- "haskell-language-server",
         "bash-language-server",
-        "lua-language-server"
+        "lua-language-server",
       },
     },
   },
@@ -135,7 +136,7 @@ return {
         "c",
         -- "haskell",
         "python",
-        "lua"
+        "lua",
       },
     },
   },
