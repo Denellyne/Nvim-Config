@@ -10,4 +10,5 @@ M.base46 = {
   transparency = true,
 }
 
+M.lsp = { signature = false }
 return M
