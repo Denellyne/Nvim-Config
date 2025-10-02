@@ -113,6 +113,28 @@ return {
   -- },
 
   {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      git = {
+        ignore = false,
+      },
+      filters = {
+        dotfiles = false,
+      },
+    },
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      pickers = {
+        find_files = {
+          hidden = true,
+          no_ignore = true,
+        },
+      },
+    },
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
