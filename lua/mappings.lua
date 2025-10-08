@@ -5,9 +5,7 @@ local remove = vim.api.nvim_set_keymap
 
 -- Mappings
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<leader>ca", "<cmd> lua vim.lsp.buf.code_action() <CR>", { desc = "LSP code action" })
-
 -- Remove Mappings
 
 remove("n", "<Up>", "<Nop>", { noremap = true })
