@@ -30,6 +30,9 @@ return {
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true,
         },
+        signature = {
+          enabled = false,
+        },
       },
       presets = {
         bottom_search = true, -- use classic bottom cmdline for search
@@ -40,6 +43,24 @@ return {
       },
     },
   },
+  {
+  "ray-x/lsp_signature.nvim",
+  event = "VeryLazy",
+  opts = {},
+  config = function(_, opts)
+    require'lsp_signature'.setup({
+      bind = true,
+      handler_opts = {
+        border = "rounded"
+      },
+      hint_enable = false,
+      floating_window = true,
+      floating_window_off_x = 1,
+      floating_window_off_y = 0,
+      padding = "",
+    })
+  end
+},
 
   {
     "christoomey/vim-tmux-navigator",
