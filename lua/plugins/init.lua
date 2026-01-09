@@ -1,5 +1,30 @@
 return {
   {
+    "mrcjkb/rustaceanvim",
+    version = "^5",
+    lazy = false,
+    config = function()
+      vim.g.rust_recommended_style = true
+      vim.g.rustaceanvim = {
+        tools = {
+          enable_clippy = true,
+        },
+        server = {
+          settings = {
+            ["rust-analyzer"] = {
+              checkOnSave = { enable = true, command = "clippy" },
+              diagnostics = { enable = true },
+              cargo = { allFeatures = true },
+              procMacro = { enable = true },
+              checkOnSaveAllTargets = true,
+              check = { command = "check" },
+            },
+          },
+        },
+      }
+    end,
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -44,23 +69,23 @@ return {
     },
   },
   {
-  "ray-x/lsp_signature.nvim",
-  event = "VeryLazy",
-  opts = {},
-  config = function(_, opts)
-    require'lsp_signature'.setup({
-      bind = true,
-      handler_opts = {
-        border = "rounded"
-      },
-      hint_enable = false,
-      floating_window = true,
-      floating_window_off_x = 1,
-      floating_window_off_y = 0,
-      padding = "",
-    })
-  end
-},
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    opts = {},
+    config = function(_, opts)
+      require("lsp_signature").setup {
+        bind = true,
+        handler_opts = {
+          border = "rounded",
+        },
+        hint_enable = false,
+        floating_window = true,
+        floating_window_off_x = 1,
+        floating_window_off_y = 0,
+        padding = "",
+      }
+    end,
+  },
 
   {
     "christoomey/vim-tmux-navigator",
@@ -190,8 +215,6 @@ return {
         "clangd",
         "clang-format",
         "codelldb",
-        "pyright",
-        "pyink",
         "stylua",
         -- "haskell-language-server",
         "bash-language-server",
@@ -205,6 +228,7 @@ return {
       ensure_installed = {
         "cpp",
         "c",
+        "rust",
         -- "haskell",
         "python",
         "lua",

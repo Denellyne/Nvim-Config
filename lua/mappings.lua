@@ -22,3 +22,9 @@ remove("v", "<Up>", "<Nop>", { noremap = true })
 remove("v", "<Down>", "<Nop>", { noremap = true })
 remove("v", "<Left>", "<Nop>", { noremap = true })
 remove("v", "<Right>", "<Nop>", { noremap = true })
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ld",
+  '<cmd>lua vim.diagnostic.open_float(nil, { scope = "line" })<CR>',
+  { noremap = true, silent = true }
+)
