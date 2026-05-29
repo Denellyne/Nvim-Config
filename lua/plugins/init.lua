@@ -116,11 +116,10 @@ return {
   },
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
+    event = "BufWritePre",
     opts = require "configs.conform",
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -200,32 +199,6 @@ return {
     },
   },
   {
-    "scalameta/nvim-metals",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    ft = { "scala", "sbt", "java" },
-    config = function()
-      local metals = require "metals"
-      local config = metals.bare_config()
-
-      config.settings = {
-        metals = {
-          serverVersion = "latest.snapshot",
-        },
-      }
-
-      config.on_attach = function(client, bufnr)
-        require("metals").setup_dap()
-      end
-
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "scala", "sbt", "java" },
-        callback = function()
-          metals.initialize_or_attach(config)
-        end,
-      })
-    end,
-  },
-  {
     "nvim-telescope/telescope.nvim",
     opts = {
       pickers = {
@@ -242,8 +215,6 @@ return {
       ensure_installed = {
         "clangd",
         "clang-format",
-        -- "codelldb",
-        -- "haskell-language-server",
         "bash-language-server",
         "lua-language-server",
       },
@@ -255,11 +226,7 @@ return {
       ensure_installed = {
         "cpp",
         "c",
-        "rust",
-        -- "haskell",
-        "python",
         "lua",
-        "asm",
       },
     },
   },
