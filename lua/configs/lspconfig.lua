@@ -1,11 +1,8 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local servers = { "clangd", "lua_ls", "bashls" }
-vim.lsp.enable(servers)
 
-vim.lsp["rust-analyzer"] = function() end
 vim.lsp.config.clangd = {
-
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
   root_markers = {
     ".clangd",
@@ -17,5 +14,7 @@ vim.lsp.config.clangd = {
     ".git",
   },
 }
+vim.lsp.enable(servers)
 
+vim.lsp["rust-analyzer"] = function() end
 -- read :h vim.lsp.config for changing options of lsp servers

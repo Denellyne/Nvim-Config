@@ -190,12 +190,40 @@ return {
     "nvim-tree/nvim-tree.lua",
     opts = {
       git = {
-        ignore = false,
+        ignore = true,
       },
       filters = {
+        enable = true,
         dotfiles = false,
+        custom = { "%.o$", "%.d$" },
       },
     },
+  },
+  {
+    "scalameta/nvim-metals",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    ft = { "scala", "sbt", "java" },
+    config = function()
+      local metals = require "metals"
+      local config = metals.bare_config()
+
+      config.settings = {
+        metals = {
+          serverVersion = "latest.snapshot",
+        },
+      }
+
+      config.on_attach = function(client, bufnr)
+        require("metals").setup_dap()
+      end
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "scala", "sbt", "java" },
+        callback = function()
+          metals.initialize_or_attach(config)
+        end,
+      })
+    end,
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -214,8 +242,7 @@ return {
       ensure_installed = {
         "clangd",
         "clang-format",
-        "codelldb",
-        "stylua",
+        -- "codelldb",
         -- "haskell-language-server",
         "bash-language-server",
         "lua-language-server",
@@ -232,6 +259,7 @@ return {
         -- "haskell",
         "python",
         "lua",
+        "asm",
       },
     },
   },
